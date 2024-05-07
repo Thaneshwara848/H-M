@@ -1,12 +1,11 @@
 
 import java.util.Scanner;
-c lass Dev
+
+class Emp
 {
 	int id,age;
-	int salary=60000;
 	String name;
-	String desig="Developer";
-	Dev()
+	Emp()
 	{
 		Scanner sc= new Scanner(System.in);
 		System.out.println(" Enter ID : ");
@@ -14,9 +13,16 @@ c lass Dev
 		System.out.println(" Enter Name : ");
 		 name=sc.next();
 		System.out.println(" Enter Age : ");
-		 age=sc.nextInt();
-				
-
+		 age=sc.nextInt();			
+	}
+}
+class Manager extends Emp
+{
+	
+	int salary=800000;
+	String desig="Manager";
+	Manager()
+	{
 	}	
 	void display()
 	{
@@ -27,21 +33,49 @@ c lass Dev
 		System.out.println(" My Designation : "+desig);	
 	}
 }
-class Clerk
+
+
+class Tester extends Emp
 {
-	int id,age;
+	
+	int salary=300000;
+	String desig="Tester";
+	Tester()
+	{
+	}	
+	void display()
+	{
+		System.out.println(" Hi ID "+id);	
+		System.out.println(" My Name : "+name);	
+		System.out.println(" Hi AGE "+age);	
+		System.out.println(" My Salary : "+salary);		
+		System.out.println(" My Designation : "+desig);	
+	}
+}
+
+class Dev extends Emp
+{
+	int salary=60000;
+	String desig="Developer";
+	Dev()
+	{
+	}	
+	void display()
+	{
+		System.out.println(" Hi ID "+id);	
+		System.out.println(" My Name : "+name);	
+		System.out.println(" Hi AGE "+age);	
+		System.out.println(" My Salary : "+salary);		
+		System.out.println(" My Designation : "+desig);	
+	}
+}
+class Clerk extends Emp
+{
+	
 	int salary=20000;
-	String name;
 	String desig="Clerk";
 	Clerk()
-	{
-		Scanner sc= new Scanner(System.in);
-		System.out.println(" Enter ID : ");
-		 id=sc.nextInt();
-		System.out.println(" Enter Name : ");
-		 name=sc.next();
-		System.out.println(" Enter Age : ");
-		 age=sc.nextInt();
+	{	
 	}	
 	void display()
 	{
@@ -61,6 +95,9 @@ public class Demo2
 		do{
 			System.out.println("1) Developer");
 			System.out.println("2) Clerk");
+			System.out.println("3) Manager");
+			System.out.println("4) Tester");
+
 			System.out.println("3) Exit");
 
 			Scanner sc = new Scanner(System.in);
@@ -79,10 +116,21 @@ public class Demo2
 			}
 			if(ch1==3)
 			{
+				Manager m = new Manager();
+				m.display();
+			}
+
+			if(ch1==4)
+			{
+				Tester t = new Tester();
+				t.display();
+			}
+			if(ch1==5)
+			{
 				System.out.println("Thank You");
 				System.exit(0);
 			}
 
-		}while(ch1!=3);	
+		}while(ch1!=5);	
 	}
 }
