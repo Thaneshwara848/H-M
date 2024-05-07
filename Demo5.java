@@ -12,12 +12,18 @@ class C  extends P
 		System.out.println("C class" );	
 	}
 }
+class C1 extends C
+{
+	C1()
+	{
+		System.out.println("C1 class ");
+	}
+}
 class Demo5
 {
 	public static void main(String args[])
 	{
-		//P p = new P();
-		C c = new C();
+		C1 c1 = new C1();
 		
 	}
 }

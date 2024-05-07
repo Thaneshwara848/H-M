@@ -1,9 +1,8 @@
 
 
-
 import java.util.Scanner;
 
-class Emp
+abstract class Emp
 {
 	int id,age;
 	String name;
@@ -27,6 +26,8 @@ class Emp
 		System.out.println(" My Salary : "+salary);		
 		System.out.println(" My Designation : "+desig);	
 	}
+	public abstract  void raiseSalry();
+
 }
 class Manager extends Emp
 {	
@@ -63,50 +64,71 @@ class Clerk extends Emp
 	}	
 }	
 
-public class Demo2
+public class Demo10
 {
 	public static void main(String args[])
 	{
-		int ch1=0;
+		int ch1,ch2=0;
+		Tester t=null;
 		do{
-			System.out.println("1) Developer");
-			System.out.println("2) Clerk");
-			System.out.println("3) Manager");
-			System.out.println("4) Tester");
-
-			System.out.println("3) Exit");
+			System.out.println("1) Create");
+			System.out.println("2) Display");
+			System.out.println("3) Raise Salary");
+			System.out.println("4) Exit");
 
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter the choice :");
-			 ch1= sc.nextInt();
+			ch1= sc.nextInt();
 		
 			if(ch1==1)
 			{
-				Dev d = new Dev();
-				d.display();
+				do{
+					System.out.println("1) Developer");
+					System.out.println("2) Clerk");
+					System.out.println("3) Manager");
+					System.out.println("4) Tester");
+
+					System.out.println("3) Exit");
+
+					System.out.print("Enter the choice :");
+			 		ch2= sc.nextInt();
+		
+					if(ch2==1)
+					{
+						Dev d = new Dev();
+					}
+					if(ch2==2)
+					{
+						Clerk c = new Clerk();
+					}
+					if(ch2==3)
+					{
+						Manager m = new Manager();
+					}
+					if(ch2==4)
+					{
+						t = new Tester();
+					}
+				}while(ch1!=4);	
 			}
 			if(ch1==2)
 			{
-				Clerk c = new Clerk();
-				c.display();
+				t.display();			
 			}
 			if(ch1==3)
 			{
-				Manager m = new Manager();
-				m.display();
+					System.out.println("Raise Salary .............!");
+					10 % ;
+					t.raiseSalry();
 			}
-
 			if(ch1==4)
-			{
-				Tester t = new Tester();
-				t.display();
-			}
-			if(ch1==5)
 			{
 				System.out.println("Thank You");
 				System.exit(0);
 			}
 
-		}while(ch1!=5);	
+		}while(ch1!=4);
+		
 	}
 }
+
