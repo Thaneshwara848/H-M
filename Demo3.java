@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class P 
 {
 	int money = 200000;
@@ -33,3 +34,6 @@ class Demo3
 		c.use();
 	}
 }
+=======
+class Demo3
+>>>>>>> f7ce5fb119ad0097e8029bdb8f2b1125ba5cb489
